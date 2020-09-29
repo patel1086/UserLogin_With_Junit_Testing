@@ -105,7 +105,20 @@ public class LoginJunit {
         Assert.assertEquals(false,result);
 
     }
-    
+    @Test
+    public void password_is_greater_than_or_equal_to_eight_chars_return_true()
+    {
+        String password="abcdfgh4";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(true,result);
 
+    }
+    @Test
+    public void password_is_less_than_8_chars_return_false()
+    {
+        String password="abcdfg4";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(false,result);
 
+    }
 }

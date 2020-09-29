@@ -58,4 +58,21 @@ public class LoginMain {
         return found;
 
     }
+    public static boolean PasswordValidation(String name)
+    {
+
+        Pattern pattern = Pattern.compile("^[a-zA-z0-9]{8,}$"); 
+	Matcher m=pattern.matcher(name); 
+	 boolean found = false;
+        while (matcher.find())
+        {
+            System.out.println("Valid Password");
+            found = true;
+        }
+        if(!found)
+        {
+            System.out.println("Invalid Password");
+        }
+        return found;
+    }
 }
