@@ -61,7 +61,7 @@ public class LoginMain {
     public static boolean PasswordValidation(String name)
     {
 
-        Pattern pattern = Pattern.compile("^[a-zA-z0-9]{8,}$"); 
+        Pattern pattern = Pattern.compile("^(?=.*?[A-Z])[a-zA-z0-9].{8,}$"); 
 	Matcher m=pattern.matcher(name); 
 	 boolean found = false;
         while (matcher.find())

@@ -121,4 +121,20 @@ public class LoginJunit {
         Assert.assertEquals(false,result);
 
     }
+    @Test
+    public void password_has_at_least_one_cap_return_true()
+    {
+        String password="Abcdefgh34";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(true,result);
+
+    }
+    @Test
+    public void password_have_not_at_least_one_cap_return_false()
+    {
+        String password="abcdseftr546";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(false,result);
+
+    }
 }
