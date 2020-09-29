@@ -25,7 +25,7 @@ public class LoginMain {
     }
     public static boolean LastNameValidatation(String name)
     {
-        Pattern pattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9])[a-zA-z0-9].{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#!@%&])[a-zA-Z0-9].{8,}$");
         Matcher matcher =  pattern.matcher(name);
         boolean found = false;
         while (matcher.find())

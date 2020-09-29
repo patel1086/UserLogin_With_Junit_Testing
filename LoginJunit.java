@@ -153,4 +153,20 @@ public class LoginJunit {
         Assert.assertEquals(true,result);
 
     }
+     @Test
+    public void password_has_one_special_char_return_true()
+    {
+        String password="Abcdef54@";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(true,result);
+
+    }
+    @Test
+    public void password_has_not_one_special_char_return_false()
+    {
+        String password="Abcde45gft";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(false,result);
+
+    }
 }
