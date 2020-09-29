@@ -106,65 +106,65 @@ public class LoginJunit {
 
     }
     @Test
-    public void password_is_greater_than_or_equal_to_eight_chars_return_true()
+    public void password_has_less_than_8_chars_return_false()
     {
-        String password="abcdfgh4";
-        boolean result= user.PasswordValidation(password);
-        Assert.assertEquals(true,result);
-
-    }
-    @Test
-    public void password_is_less_than_8_chars_return_false()
-    {
-        String password="abcdfg4";
+        String password="Abc5@";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(false,result);
 
     }
     @Test
-    public void password_has_at_least_one_cap_return_true()
+    public void password_is_greater_than_or_equal_to_8_chars_return_true()
     {
-        String password="Abcdefgh34";
+        String password="Abc567@";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(true,result);
 
     }
     @Test
-    public void password_have_not_at_least_one_cap_return_false()
+    public void password_has_at_least_one_capital_char_return_true()
     {
-        String password="abcdseftr546";
+        String password="Abcdrf567@";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(true,result);
+
+    }
+    @Test
+    public void password_have_not_at_least_1_cap_return_false()
+    {
+        String password="abcfd567@";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(false,result);
 
     }
-     @Test
-    public void password_doesnot_have_at_least_one_number_return_false()
+    @Test
+    public void password_have_not_at_least_1_number_return_false()
     {
-        String password="Abcdefght";
+        String password="Abcdefghy@";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(false,result);
 
     }
     @Test
-    public void password_have_at_least_one_number_return_true()
+    public void password_have_at_least_1_number_return_true()
     {
-        String password="Abcderf543";
+        String password="Abcef567@";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(true,result);
 
     }
     @Test
-    public void password_has_one_special_char_return_true()
+    public void password_have_one_special_char_return_true()
     {
-        String password="Abcdef54@";
+        String password="Abcdefrg567@";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(true,result);
 
     }
     @Test
-    public void password_has_not_one_special_char_return_false()
+    public void password_have_not_special_Char_return_false()
     {
-        String password="Abcde45gft";
+        String password="Abcdfrg567";
         boolean result= user.PasswordValidation(password);
         Assert.assertEquals(false,result);
 
