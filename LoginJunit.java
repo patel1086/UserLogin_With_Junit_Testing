@@ -137,4 +137,20 @@ public class LoginJunit {
         Assert.assertEquals(false,result);
 
     }
+     @Test
+    public void password_doesnot_have_at_least_one_number_return_false()
+    {
+        String password="Abcdefght";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(false,result);
+
+    }
+    @Test
+    public void password_have_at_least_one_number_return_true()
+    {
+        String password="Abcderf543";
+        boolean result= user.PasswordValidation(password);
+        Assert.assertEquals(true,result);
+
+    }
 }
