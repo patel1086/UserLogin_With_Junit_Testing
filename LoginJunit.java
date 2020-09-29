@@ -57,6 +57,55 @@ public class LoginJunit {
         Assert.assertEquals(false,result);
 
     }
+    @Test
+    public void mobile_pattern_matches_return_true()
+    {
+        String mobile="91 9636638082";
+        boolean result= user.MobileValidate(mobile);
+        Assert.assertEquals(true,result);
+
+    }
+    @Test
+    public void more_than_one_space_after_country_code_return_false()
+    {
+        String mobile="91  9636638082";
+        boolean result= user.MobileValidate(mobile);
+        Assert.assertEquals(false,result);
+
+    }
+    @Test
+    public void if_country_code_have_more_than_two_numers_return_false()
+    {
+        String mobile="911 9636638082";
+        boolean result= user.MobileValidate(mobile);
+        Assert.assertEquals(false,result);
+
+    }
+    @Test
+    public void No_space_after_country_code_return_false()
+    {
+        String mobile="919636638082";
+        boolean result= user.MobileValidate(mobile);
+        Assert.assertEquals(false,result);
+
+    }
+    @Test
+    public void if_countrycode_Not_given_return_false()
+    {
+        String mobile="9636638082";
+        boolean result= user.MobileValidate(mobile);
+        Assert.assertEquals(false,result);
+
+    }
+   @Test
+    public void Moibile_number_is_more_than_ten_number_return_false()
+    {
+        String mobile="91 96366380823";
+        boolean result= user.MobileValidate(mobile);
+        Assert.assertEquals(false,result);
+
+    }
+    
 
 
 }

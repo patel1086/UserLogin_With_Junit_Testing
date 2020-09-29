@@ -30,13 +30,30 @@ public class LoginMain {
         boolean found = false;
         while (matcher.find())
         {
-            System.out.println("Valid Last Name");
+            System.out.println("Valid last Name");
             found = true;
         }
         if(!found)
         {
-            System.out.println("Invalid Last name");
+            System.out.println("Invalid last name");
 
+        }
+        return found;
+
+    }
+    public static boolean MobileValidate(String name)
+    {
+        Pattern pattern = Pattern.compile("^[0-9]{2}(\s{1}[0-9]{10})$");
+        Matcher matcher =  pattern.matcher(name);
+        boolean found = false;
+        while (matcher.find())
+        {
+            System.out.println("Valid Number");
+            found = true;
+        }
+        if(!found)
+        {
+            System.out.println("Invalid Number");
         }
         return found;
 
