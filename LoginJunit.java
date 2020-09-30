@@ -169,5 +169,22 @@ public class LoginJunit {
         Assert.assertEquals(false,result);
 
     }
+    @Test
+    public void email_is_valid_return_true()
+    {
+        String email="abc.xyz@gmail.com";
+        boolean result= user.EmailValidation(email);
+        Assert.assertEquals(true,result);
+
+    }
+    @Test
+    public void email_is_invalid_return_false()
+    {
+        String email="abc.xyz@@gmail.com";
+        boolean result= user.EmailValidation(email);
+        Assert.assertEquals(false,result);
+
+    }
+	
     
 }

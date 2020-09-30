@@ -75,4 +75,20 @@ public class LoginMain {
         }
         return found;
     }
+    public static boolean EmailValidation(String email)
+    {
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9+-]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+	Matcher matcher =  pattern.matcher(email);
+
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Valid email");
+            found = true;
+        }
+        if(!found){
+            System.out.println("Invalid email");
+        }
+        return found;
+
+    }
 }
