@@ -62,7 +62,7 @@ public class LoginMain {
     {
 
         Pattern pattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#!@%&])[a-zA-Z0-9].{8,}$"); 
-	Matcher m=pattern.matcher(name); 
+	Matcher matcher=pattern.matcher(name); 
 	 boolean found = false;
         while (matcher.find())
         {
