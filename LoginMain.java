@@ -91,7 +91,7 @@ public class LoginMain {
         }
         if(!found)
         {
-            throw new LoginException(LoginException.ExceptionType.INVALID_PSWd,"Invalid pswd");
+            throw new LoginException(LoginException.ExceptionType.INVALID_PSWD,"Invalid pswd");
         }
         return found;
     }

@@ -7,9 +7,9 @@ enum ExceptionType
 {
     NULL,EMPTY,INVALID_FIRST_NAME,INVALID_LAST_NAME,INVALID_MOBILE_NUMBER,INVALID_PSWD,INVALID_EMAIL;
 }
-ExceptionType e;
+ExceptionType eo;
     public LoginException(ExceptionType e,String message) {
         super(message);
-        this.e=e;
+        this.eo=e;
     }
 }
