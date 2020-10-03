@@ -32,7 +32,7 @@ public class EmailParamaterizedValidate {
     public void given_correct_Email_must_return_true() throws LoginException {
         LoginMain l= new LoginMain();
         try {
-            boolean result = l.EmailValidation(this.email);
+            boolean result = l.email.validate(this.email);
             Assert.assertTrue(result);
         }
         catch (LoginException e)

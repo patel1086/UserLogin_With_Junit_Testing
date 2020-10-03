@@ -16,7 +16,7 @@ public class LoginJunit {
     {
         try{
 	String firstname="Jitendra";
-        boolean result= user.FirstNameValidation(firstname);
+        boolean result= user.firstname.validate(firstname);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -31,7 +31,7 @@ public class LoginJunit {
     {
         try{
 	String firstname="jitendra";
-        boolean result= user.FirstNameValidation(firstname);
+        boolean result= user.firstname.validate(firstname);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -46,7 +46,7 @@ public class LoginJunit {
     {
         try{
 	String firstname="Ji";
-        boolean result= user.FirstNameValidation(firstname);
+        boolean result= user.firstname.validate(firstname);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -60,7 +60,7 @@ public class LoginJunit {
     public void if_firstname_empty_return_false(){
 	try{
 		String firstname="";
-		boolean result=user.FirstNameValidation(firstname);
+		boolean result=user.firstname.validate(firstname);
 	}catch(LoginException e){
 		System.out.println(e.eo+"  "+e.getMessage());
 		Assert.assertEquals(LoginException.ExceptionType.EMPTY,e.eo);
@@ -71,7 +71,7 @@ public class LoginJunit {
     {
         try {
             String firstname = null;
-            boolean result = user.FirstNameValidation(firstname);
+            boolean result = user.firstname.validate(firstname);
 
         }
         catch (LoginException e)
@@ -86,7 +86,7 @@ public class LoginJunit {
     {
         try{
 	String lastname="Patel";
-        boolean result= user.LastNameValidatation(lastname);
+        boolean result= user.lastname.validate(lastname);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -101,7 +101,7 @@ public class LoginJunit {
     {
         try{
 	String lastname="patel";
-        boolean result= user.LastNameValidatation(lastname);
+        boolean result= user.lastname.validate(lastname);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -116,7 +116,7 @@ public class LoginJunit {
     {
         try{
 	String lastname="Pa";
-        boolean result= user.LastNameValidatation(lastname);
+        boolean result= user.lastname.validate(lastname);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -130,7 +130,7 @@ public class LoginJunit {
     public void if_lastname_empty_return_false(){
 	try{
 		String lastname="";
-		boolean result=user.LastNameValidatation(lastname);
+		boolean result=user.lastname.validate(lastname);
 	}catch(LoginException e){
 		System.out.println(e.eo+"  "+e.getMessage());
 		Assert.assertEquals(LoginException.ExceptionType.EMPTY,e.eo);
@@ -141,7 +141,7 @@ public class LoginJunit {
     {
         try {
             String lastname = null;
-            boolean result = user.LastNameValidatation(lastname);
+            boolean result = user.lastname.validate(lastname);
 
         }
         catch (LoginException e)
@@ -156,7 +156,7 @@ public class LoginJunit {
     {
         try{
 	String mobile="91 9636638082";
-        boolean result= user.MobileValidate(mobile);
+        boolean result= user.mobile.validate(mobile);
         Assert.assertEquals(true,result);
 	}
 	 catch (LoginException e)
@@ -172,7 +172,7 @@ public class LoginJunit {
     {
         try{
 	String mobile="91  9636638082";
-        boolean result= user.MobileValidate(mobile);
+        boolean result= user.mobile.validate(mobile);
         Assert.assertEquals(false,result);
 	}
 	 catch (LoginException e)
@@ -187,7 +187,7 @@ public class LoginJunit {
     {
         try{
 	String mobile="911 9636638082";
-        boolean result= user.MobileValidate(mobile);
+        boolean result= user.mobile.validate(mobile);
         Assert.assertEquals(false,result);
 	}
 	 catch (LoginException e)
@@ -202,7 +202,7 @@ public class LoginJunit {
     {
         try{
 	String mobile="919636638082";
-        boolean result= user.MobileValidate(mobile);
+        boolean result= user.mobile.validate(mobile);
         Assert.assertEquals(false,result);
 	}
 	 catch (LoginException e)
@@ -217,7 +217,7 @@ public class LoginJunit {
     {
        try{
 	 String mobile="9636638082";
-        boolean result= user.MobileValidate(mobile);
+        boolean result= user.mobile.validate(mobile);
         Assert.assertEquals(false,result);
 	}
 	 catch (LoginException e)
@@ -231,7 +231,7 @@ public class LoginJunit {
     {
         try{
 	String mobile="91 96366380823";
-        boolean result= user.MobileValidate(mobile);
+        boolean result= user.mobile.validate(mobile);
         Assert.assertEquals(false,result);
 	}
 	 catch (LoginException e)
@@ -245,7 +245,7 @@ public class LoginJunit {
     public void if_mobilenumber_empty_return_false(){
 	try{
 		String mobile="";
-		boolean result=user.MobileValidate(mobile);
+		boolean result=user.mobile.validate(mobile);
 	}catch(LoginException e){
 		System.out.println(e.eo+"  "+e.getMessage());
 		Assert.assertEquals(LoginException.ExceptionType.EMPTY,e.eo);
@@ -256,7 +256,7 @@ public class LoginJunit {
     {
         try {
             String mobile = null;
-            boolean result = user.MobileValidate(mobile);
+            boolean result =user.mobile.validate(mobile);
 
         }
         catch (LoginException e)
@@ -271,7 +271,7 @@ public class LoginJunit {
     {
         try{
 	String password="Abc5@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -286,7 +286,7 @@ public class LoginJunit {
     {
         try{
 	String password="Abc567@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -301,7 +301,7 @@ public class LoginJunit {
     {
         try{
 	String password="Abcdrf567@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -316,7 +316,7 @@ public class LoginJunit {
     {
         try{
 	String password="abcfd567@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -331,7 +331,7 @@ public class LoginJunit {
     {
         try{
 	String password="Abcdefghy@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -346,7 +346,7 @@ public class LoginJunit {
     {
         try{
 	String password="Abcef567@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -361,7 +361,7 @@ public class LoginJunit {
     {
        try{
 	 String password="Abcdefrg567@";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -376,7 +376,7 @@ public class LoginJunit {
     {
         try{
 	String password="Abcdfrg567";
-        boolean result= user.PasswordValidation(password);
+        boolean result= user.password.validate(password);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -391,7 +391,7 @@ public class LoginJunit {
     public void if_password_empty_return_false(){
 	try{
 		String password="";
-		boolean result=user.PasswordValidation(password);
+		boolean result=user.password.validate(password);
 	}catch(LoginException e){
 		System.out.println(e.eo+" "+e.getMessage());
 		Assert.assertEquals(LoginException.ExceptionType.EMPTY,e.eo);
@@ -402,7 +402,7 @@ public class LoginJunit {
     {
         try {
             String password = null;
-            boolean result = user.PasswordValidation(password);
+            boolean result = user.password.validate(password);
 
         }
         catch (LoginException e)
@@ -417,7 +417,7 @@ public class LoginJunit {
     {
         try{
 	String email="abc.xyz@gmail.com";
-        boolean result= user.EmailValidation(email);
+        boolean result= user.email.validate(email);
         Assert.assertEquals(true,result);
 	}
 	catch (LoginException e)
@@ -432,7 +432,7 @@ public class LoginJunit {
     {
         try{
 	String email="abc.xyz@@gmail.com";
-        boolean result= user.EmailValidation(email);
+        boolean result= user.email.validate(email);
         Assert.assertEquals(false,result);
 	}
 	catch (LoginException e)
@@ -446,7 +446,7 @@ public class LoginJunit {
     public void if_email_empty_return_false(){
 	try{
 		String email="";
-		boolean result=user.EmailValidation(email);
+		boolean result=user.email.validate(email);
 	}catch(LoginException e){
 		System.out.println(e.eo+"  "+e.getMessage());
 		Assert.assertEquals(LoginException.ExceptionType.EMPTY,e.eo);
@@ -457,7 +457,7 @@ public class LoginJunit {
     {
         try {
             String email = null;
-            boolean result = user.EmailValidation(email);
+            boolean result = user.email.validate(email);
 
         }
         catch (LoginException e)

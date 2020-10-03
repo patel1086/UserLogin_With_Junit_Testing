@@ -5,6 +5,9 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+interface user{
+    Boolean validate(String data) throws LoginException;
+}
 public class LoginMain {
 
     public static void ExceptionNullCheck(String usercredential) throws LoginException {
@@ -113,4 +116,86 @@ public class LoginMain {
         return found;
 
     }
+    user firstname = (data) ->
+    {
+    	ExceptionNullCheck(data);
+        Pattern pattern = Pattern.compile("^[A-Z]{1}(?=.*[a-z]).{2,}$");
+        Matcher matcher = pattern.matcher(data);
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Valid First Name");
+            found = true;
+        }
+        if (!found) {
+            throw new LoginException(LoginException.ExceptionType.INVALID_FIRST_NAME,"Invalid First Name");
+
+        }
+        return found;
+    };
+    user lastname = (data) ->
+    {
+    	ExceptionNullCheck(data);
+        Pattern pattern = Pattern.compile("^[A-Z]{1}(?=.*[a-z]).{2,}$");
+        Matcher matcher = pattern.matcher(data);
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Valid Last Name");
+            found = true;
+        }
+        if (!found) {
+            throw new LoginException(LoginException.ExceptionType.INVALID_LAST_NAME,"Invalid Last Name");
+
+        }
+        return found;
+    };
+    user password = (data) ->
+    {
+    	ExceptionNullCheck(data);
+        Pattern pattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#!@%&])[a-zA-Z0-9].{8,}$");
+        Matcher matcher = pattern.matcher(data);
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Valid Password");
+            found = true;
+        }
+        if (!found) {
+            throw new LoginException(LoginException.ExceptionType.INVALID_PSWD,"Invalid Password");
+
+        }
+        return found;
+    };
+    user mobile = (data) ->
+    {
+    	ExceptionNullCheck(data);
+        Pattern pattern = Pattern.compile("^[0-9]{2}(\s{1}[0-9]{10})$");
+        Matcher matcher = pattern.matcher(data);
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Valid Mobile Number");
+            found = true;
+        }
+        if (!found) {
+            throw new LoginException(LoginException.ExceptionType.INVALID_MOBILE_NUMBER,"Invalid Mobile Number");
+
+        }
+        return found;
+    };
+    user email = (data) ->
+    {
+    	ExceptionNullCheck(data);
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9+-]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher matcher = pattern.matcher(data);
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Valid Email");
+            found = true;
+        }
+        if (!found) {
+            throw new LoginException(LoginException.ExceptionType.INVALID_EMAIL,"Invalid Email");
+
+        }
+        return found;
+    };
+    
+
 }
